@@ -1,67 +1,49 @@
 [![Android CI](https://github.com/android-fis-uan/android-sample-project/actions/workflows/android.yml/badge.svg)](https://github.com/android-fis-uan/android-sample-project/actions/workflows/android.yml)
 
-# Proyecto de ejemplo de Computación Móvil
+# ROLES DEL PROYECTO:
+PROGRAMADOR DE MECÁNICAS: CRISTIAN DARIO Y EYDER ACERO
+DISEÑO DE ESCENARIOS Y PERSONAJES EN PIXEL ART: EYDER ACERO
 
-Este repositorio contiene el código fuente y la [documentación](docs) del proyecto.
+# HISTORIA DEL VIDEOJUEGO
+Una serie de estudiantes con intenciones maliciosas de destruir la universidad Antonio Nariño planifica una serie de acontecimientos con el fin destruir para siempre la institución, dos héroes que en antaño fueron estudiantes de esta universidad son convocados por el coordinador de la facultad de sistemas para detener a estos estudiantes y que no les sea posible concretar el plan que tienen en mente.
+¿Podrán nuestros héroes salvar a la institución? 
 
-## Uso del proyecto
+# MECÁNICAS Y NIVELES
+El juego de inicio contará con dos niveles por el tiempo que se tiene para desarrollarlo y contará con una serie de enemigos y dos protagonistas, cada uno con un arma distinta(escopeta, pistola), las mecánicas que se desean implementar son saltar, correr, disparar, daño, y 3 vidas por nivel, con la posibilidad de agregar algún otro, los escenarios del videojuego serán mostrados en la segunda entrega por temas de tiempo.
+Se plantean cuatro tipos de enemigos base, el primero simplemente corre hacia adelante, si toca al jugador lo elimina, spawnea fuera de cámara en puntos específicos del nivel, solo requiere de un disparo para eliminarlo; el segundo está quieto y dispara en rafagas hacia el jugador, aparece en partes específicas del nivel, no spawnea de repente, solo requiere de un disparo para eliminarlo; el tercero está oculto (en este modo no se puede eliminar) y aparece para disparar al jugador (en este modo si se puede eliminar), aparece en partes específicas del nivel, solo requiere de un disparo para eliminarlo; el cuarto es un cañón que dispara en rafagas hacia el jugador, está inmovil y aparece en partes específicas del nivel, (apunta y dispara entre 0°-180°,  215°- 325° tiene dos puntos ciegos), requiere de varios disparos para ser eliminado.  
 
-Este proyecto fue probado usando el SDK de Android version 36.
+# SEGUNDA ENTREGA
+Para la segunda entrega del proyecto se mostrarán los escenarios del videojuego, se planea implementar la interfaz gráfica como lo es el menú de inicio el cual solo será uno con la posibilidad de tener una pantalla de puntaje, también se pondrá la barra de vida del personaje con algunas animaciones iniciales.
 
-### Con Android Studio
+# TERCERA ENTREGA
+En la tercera entrega ya se espera tener toda la parte de las mecánicas del videojuego de manera funcional en los dos escenarios del mismo, todo el tema de arte se realizará en pixel art y se espera sea un juego de 8 o 16 bits  para móvil.
+# HERRAMIENTAS
+Godot es un motor de videojuegos de código abierto, gratuito y multiplataforma, creado por desarrolladores argentinos, que permite crear juegos en 2D y 3D para diversas plataformas como PC, móviles y web. Su sistema se basa en una arquitectura de árbol de nodos organizada en escenas, donde cada nodo añade funcionalidad a los objetos del juego. Es una herramienta popular para desarrolladores independientes por su facilidad de uso, su modelo de licencia permisiva y una comunidad de apoyo activa. 
+Características principales:
+Gratuito y de Código Abierto: No tiene costos de licencias ni regalías, ya que es liberado bajo la licencia MIT. 
+Multiplataforma: Permite desarrollar juegos para diferentes plataformas y sistemas operativos. 
+Arquitectura de Nodos y Escenas: La estructura de Godot está basada en nodos que forman una jerarquía en forma de árbol, y cada proyecto se organiza en escenas. 
+Soporte 2D y 3D: Es capaz de crear tanto juegos bidimensionales como tridimensionales, ofreciendo herramientas para renderización, físicas, sonidos e inteligencia artificial. 
+Lenguaje de Scripting: Utiliza su propio lenguaje, llamado GDScript, que es similar a Python y fácil de aprender, aunque también soporta otros lenguajes
+Aquí se desarrollara el juego
+Android Studio es el Entorno de Desarrollo Integrado (IDE) oficial para crear aplicaciones en Android. Proporciona un conjunto completo de herramientas, como un editor de código, un emulador rápido, y un sistema de compilación flexible, todo basado en la tecnología de IntelliJ IDEA, para que los desarrolladores puedan diseñar, escribir, probar y depurar aplicaciones para todos los dispositivos Android. 
+Aquí se importará para android.
+Pixilart Es un software para crear los personajes y escenarios del videojuego en pixel art.
 
-Abra el proyecto en [Android Studio](https://developer.android.com/studio). La version actual fue probada con Android Studio Meerkat | 2024.3.1. Para generar el proyecto vaya a `Build` > `Build APKs`.
+# MENÚ DE INICIO Y PERSONAJES (solo single player)
+# PROTAGONISTAS
+# ENEMIGO 1
+# ENEMIGO 2
+# ENEMIGO 3
+# BOSS FINAL: (lanza barriles similar a Donkey Kong)
+![sprites](/docs/images/contra%20UAN%20sprites.png)
 
-### Desde la linea de comandos
+# POSDATA: Todo lo que se vio a continuación está sujeto a cambios con la evolución del videojuego.
+# AVANCES
+A continuación se observan pruebas y reconocimiento de la interfaz de godot, así como un primer juego de prueba.
 
-> Nota: Puede usar `devcontainers`. El proyecto ya tiene una imagen pre-configurada con el SDK de Android y el CLI de GCloud.
+![avance](/docs/images/Captura%20desde%202025-09-02%2021-09-26.png)
+![avance](/docs/images/Captura%20desde%202025-09-02%2021-14-39.png)
+![avance](/docs/images/Captura%20desde%202025-09-02%2021-15-48.png)
 
-Para compilar este proyecto desde la linea de comandos ejecute la tarea de generación de un APK en [Gradle](https://developer.android.com/build/building-cmdline):
 
-```bash
-./gradlew assembleDebug
-```
-
-## Pruebas
-
-Puede ejecutar la aplicación instalando el APK generado en su dispositivo físico o en un emulador. También es posible ejecutar la aplicación en el [Test Lab de Firebase usando el cliente de GCloud](https://firebase.google.com/docs/test-lab/android/command-line?authuser=0&hl=en). Asegúrese de tener instalado el CLI de GCloud.
-
-Para esto siga los siguientes pasos:
-
-1. Cree un nuevo proyecto en Firebase
-
-1. Inicie su sesión en GCloud desde la linea de comandos:
-
-   ```bash
-   gcloud init --console-only
-   ```
-
-1. Valide los modelos de Android disponibles para sus pruebas usando el comando
-
-   ```bash
-   gcloud firebase test android models list --filter=virtual
-   ```
-
-1. Corra sus pruebas con el comando ```gcloud firebase test android run``` pasando los parámetros apropiados como el modelo y version de Android a usar. Asegúrese de estar en la carpeta donde se genero el APK (`app/builf/outputs/apk/debug`). Por ejemplo:
-   
-   Pruebas en un dispositivo físico de modelo `tokay` y con Android SDK `34` (Android 14)
-
-   ```bash
-   gcloud firebase test android run --app app-debug.apk --type robo --device model=tokay,version=34,locale=en,orientation=portrait
-   ```
-
-   Pruebas en un dispositivo físico de modelo `redfin` y con Android SDK `30` (Android 11)
-
-   ```bash
-   gcloud firebase test android run --app app-debug.apk --type robo --device model=redfin,version=30,locale=en,orientation=portrait
-   ```
-
-   Pruebas en un dispositivo virtual de modelo `MediumPhone.arm` y con Android SDK `30` (Android 11) 
-
-   ```bash
-   gcloud firebase test android run --app app-debug.apk --type robo --device model=MediumPhone.arm,version=30,locale=en,orientation=portrait
-   ```
-
-## Uso de Github Actions
-
-El proyecto esta configurado con Github Actions para compilar y probar de forma automática el proyecto con Firebase Test Lab, en cada push a la rama principal.
