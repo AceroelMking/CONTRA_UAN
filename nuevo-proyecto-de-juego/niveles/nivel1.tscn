@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwji8sjbb1kfy"]
+
+[ext_resource type="Script" uid="uid://bl2l6hnvc8m3t" path="res://personaje/cameraFollow.gd" id="1_2o2jj"]
+[ext_resource type="PackedScene" uid="uid://c0duvrnl11ta2" path="res://suelo/puente.tscn" id="1_xa2c6"]
+[ext_resource type="PackedScene" uid="uid://ba7skbffmvym3" path="res://suelo/plataforma.tscn" id="2_xf77x"]
+[ext_resource type="PackedScene" uid="uid://r1j6a5diabfh" path="res://suelo/top.tscn" id="3_p3fv5"]
+[ext_resource type="PackedScene" uid="uid://0sbubcenwilx" path="res://personaje/personaje.tscn" id="4_ql6mt"]
+[ext_resource type="PackedScene" uid="uid://b16wyh5gq4i2e" path="res://enemigo/barril.tscn" id="5_3bgai"]
+
+[node name="nivel1" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("object_to_follow")]
+position = Vector2(40, 534)
+limit_left = -10000
+limit_top = -400
+limit_right = 1152
+limit_bottom = 690
+position_smoothing_enabled = true
+script = ExtResource("1_2o2jj")
+object_to_follow = NodePath("../personaje")
+
+[node name="personaje" parent="." instance=ExtResource("4_ql6mt")]
+position = Vector2(40, 530)
+gravity = 560
+jump_speed = 280
+speed = 150
+
+[node name="suelos" type="Node2D" parent="."]
+
+[node name="plataforma" parent="suelos" instance=ExtResource("2_xf77x")]
+position = Vector2(366, 432)
+rotation = 0.142426
+
+[node name="plataforma2" parent="suelos" instance=ExtResource("2_xf77x")]
+position = Vector2(774, 301)
+rotation = -0.108186
+
+[node name="plataforma3" parent="suelos" instance=ExtResource("2_xf77x")]
+position = Vector2(375, 189)
+rotation = 0.0889255
+
+[node name="plataforma4" parent="suelos" instance=ExtResource("2_xf77x")]
+position = Vector2(772, 78)
+rotation = -0.116169
+
+[node name="top" parent="suelos" instance=ExtResource("3_p3fv5")]
+position = Vector2(203, -84)
+rotation = -2.67178e-05
+
+[node name="top2" parent="suelos" instance=ExtResource("3_p3fv5")]
+position = Vector2(729, -52)
+rotation = 0.118201
+
+[node name="puente" parent="suelos" instance=ExtResource("1_xa2c6")]
+position = Vector2(570, 663)
+rotation = -0.0528673
+
+[node name="enemigos" type="Node2D" parent="."]
+
+[node name="barril" parent="enemigos" instance=ExtResource("5_3bgai")]
+position = Vector2(154, 53.9999)
+
+[node name="barril2" parent="enemigos" instance=ExtResource("5_3bgai")]
+position = Vector2(646, 409)
+
+[node name="barril3" parent="enemigos" instance=ExtResource("5_3bgai")]
+position = Vector2(79, 316)
+
+[node name="barril4" parent="enemigos" instance=ExtResource("5_3bgai")]
+position = Vector2(1037, -100)

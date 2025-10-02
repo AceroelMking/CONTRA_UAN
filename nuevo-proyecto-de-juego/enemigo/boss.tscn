@@ -1,0 +1,190 @@
+[gd_scene load_steps=8 format=3 uid="uid://nts07x41m7li"]
+
+[ext_resource type="Texture2D" uid="uid://bpuwvqk3jxjk2" path="res://assets/boss.png" id="1_vmbpj"]
+[ext_resource type="Texture2D" uid="uid://twumeefr4xoy" path="res://assets/arma boss.png" id="2_gsp3k"]
+[ext_resource type="Texture2D" uid="uid://d4frniw8b1vb5" path="res://assets/enemigo.png" id="3_tv7iq"]
+
+[sub_resource type="Animation" id="Animation_oyxkd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss/ArmaBoss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boss/ArmaBoss/Enemigo:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boss:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Boss/ArmaBoss:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.64646]
+}
+
+[sub_resource type="Animation" id="Animation_4mkjw"]
+resource_name = "lanzar"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss:scale")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boss/ArmaBoss:position")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.797924, 1.10028, 1.41921),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(18, -33), Vector2(0, 0), Vector2(4, 0), Vector2(10.3813, -15.0415)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boss/ArmaBoss:rotation")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.5708, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Boss/ArmaBoss/Enemigo:visible")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_msj05"]
+resource_name = "reposo"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss/ArmaBoss:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boss/ArmaBoss/Enemigo:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yeq0e"]
+_data = {
+&"RESET": SubResource("Animation_oyxkd"),
+&"lanzar": SubResource("Animation_4mkjw"),
+&"reposo": SubResource("Animation_msj05")
+}
+
+[node name="boss" type="Node2D"]
+
+[node name="Boss" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(-1, 1)
+texture = ExtResource("1_vmbpj")
+
+[node name="ArmaBoss" type="Sprite2D" parent="Boss"]
+rotation = -1.64646
+texture = ExtResource("2_gsp3k")
+
+[node name="Enemigo" type="Sprite2D" parent="Boss/ArmaBoss"]
+visible = false
+position = Vector2(56, -14)
+texture = ExtResource("3_tv7iq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yeq0e")
+}
+autoplay = "reposo"
+
+[node name="Enemigo" type="Sprite2D" parent="."]
+position = Vector2(-132, 27)
+texture = ExtResource("3_tv7iq")
+
+[node name="Enemigo2" type="Sprite2D" parent="."]
+position = Vector2(-95, 25)
+texture = ExtResource("3_tv7iq")
+
+[node name="Enemigo3" type="Sprite2D" parent="."]
+position = Vector2(-59, 26)
+texture = ExtResource("3_tv7iq")
+
+[node name="Enemigo4" type="Sprite2D" parent="."]
+position = Vector2(-116, -4)
+texture = ExtResource("3_tv7iq")
+
+[node name="Enemigo5" type="Sprite2D" parent="."]
+position = Vector2(-77, -6)
+texture = ExtResource("3_tv7iq")
+
+[node name="Enemigo6" type="Sprite2D" parent="."]
+position = Vector2(-98, -37)
+texture = ExtResource("3_tv7iq")

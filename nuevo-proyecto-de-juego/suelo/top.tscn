@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://r1j6a5diabfh"]
+
+[ext_resource type="Texture2D" uid="uid://dyr0gg2gmoul6" path="res://assets/top.png" id="1_skmla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrljf"]
+size = Vector2(528, 17)
+
+[node name="top" type="StaticBody2D"]
+
+[node name="Top" type="Sprite2D" parent="."]
+scale = Vector2(0.539514, 0.843434)
+texture = ExtResource("1_skmla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_qrljf")
