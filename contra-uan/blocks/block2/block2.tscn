@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ducdgaf2bpbcf"]
+
+[ext_resource type="Texture2D" uid="uid://namqxv06cjkc" path="res://images/objects/block_2.png" id="1_uxrrt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_citbb"]
+size = Vector2(100, 50)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uxrrt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_citbb")
+one_way_collision = true
