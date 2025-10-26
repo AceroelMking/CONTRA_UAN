@@ -31,12 +31,24 @@ Aquí se importará para android.
 Pixilart Es un software para crear los personajes y escenarios del videojuego en pixel art.
 
 # MENÚ DE INICIO Y PERSONAJES (solo single player)
-# PROTAGONISTAS
+![avance](/docs/images/INTERFAS_INICIO.png)
+# PROTAGONISTA
+![avance](/docs/images/sprites_correr_personaje.png)
+![avance](/docs/images/personaje_1_1_1.png)
+![avance](/docs/images/personaje_1_2.png)
+![avance](/docs/images/personaje_1_3.png)
+![avance](/docs/images/personaje_1_4.png)
+![avance](/docs/images/personaje_1_5.png)
+![avance](/docs/images/personaje_1_6.png)
+![avance](/docs/images/personaje_1_7.png)
+# PROYECTILES-BARRIL
+![avance](/docs/images/BARRIL.jpeg)
+# FONDOS
+![avance](/docs/images/arbol_1 (1).png)
+![avance](/docs/images/fondo.png)
 # ENEMIGO 1
-# ENEMIGO 2
-# ENEMIGO 3
 # BOSS FINAL: (lanza barriles similar a Donkey Kong)
-![sprites](/docs/images/contra%20UAN%20sprites.png)
+
 
 # POSDATA: Todo lo que se vio a continuación está sujeto a cambios con la evolución del videojuego.
 # AVANCES
