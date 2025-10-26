@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dskv0lvc3utx1"]
+
+[ext_resource type="Texture2D" uid="uid://dfg7ypmvosqee" path="res://images/objects/barril.png" id="1_llttm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gepky"]
+radius = 37.054
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_llttm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_gepky")

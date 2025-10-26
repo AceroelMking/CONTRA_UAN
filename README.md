@@ -31,6 +31,7 @@ Aquí se importará para android.
 Pixilart Es un software para crear los personajes y escenarios del videojuego en pixel art.
 
 # MENÚ DE INICIO Y PERSONAJES (solo single player)
+<<<<<<< HEAD
 ![avance](/docs/images/INTERFAS_INICIO.png)
 # PROTAGONISTA
 ![avance](/docs/images/sprites_correr_personaje.png)
@@ -49,13 +50,35 @@ Pixilart Es un software para crear los personajes y escenarios del videojuego en
 # ENEMIGO 1
 # BOSS FINAL: (lanza barriles similar a Donkey Kong)
 
+=======
+![sprites](/docs/images/INTERFAS_INICIO.png)
+# PROTAGONISTA
+![sprites](/docs/images/sprites_correr_personaje.png)
+# PROYECTILES
+Trae la fisica del motor de juegos
+![sprites](/docs/images/barril.png)
+# BLOQUES
+Permite colicionar con los mismos
+![sprites](/docs/images/block_1.png)
+![sprites](/docs/images/block_2.png)
+![sprites](/docs/images/block_3.png)
+# FONDOS
+![sprites](/docs/images/fondo.png)
+![sprites](/docs/images/arbol_1.png)
+>>>>>>> f73d95c77a33e6bada930cbbc7b40e27271c6475
 
 # POSDATA: Todo lo que se vio a continuación está sujeto a cambios con la evolución del videojuego.
-# AVANCES
+# BOCETO
 A continuación se observan pruebas y reconocimiento de la interfaz de godot, así como un primer juego de prueba.
+![avance](docs/images/b1.png)
+![avance](docs/images/b2.png)
+![avance](docs/images/b3.png)
 
-![avance](/docs/images/Captura%20desde%202025-09-02%2021-09-26.png)
-![avance](/docs/images/Captura%20desde%202025-09-02%2021-14-39.png)
-![avance](/docs/images/Captura%20desde%202025-09-02%2021-15-48.png)
-
+# AVANCES
+El personaje principal se mueve derecha, izquierda y salta (ya posee la mecanica de doble salto); tiene animaciones respectivas
+Coliciona con los objetos pero aun no resive daño de los proyectiles
+![avance](docs/images/a1.png)
+![avance](docs/images/a2.png)
+![avance](docs/images/a3.png)
+![avance](docs/images/ag.webm)
 

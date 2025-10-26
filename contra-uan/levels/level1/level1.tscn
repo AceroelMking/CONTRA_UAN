@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://bga1vh0u530s0"]
+
+[ext_resource type="PackedScene" uid="uid://rotif5veplws" path="res://characters/character1/character1.tscn" id="1_ps0pm"]
+[ext_resource type="Script" uid="uid://nm43qqcvu0bj" path="res://levels/level1/camera_2d.gd" id="1_sfwlx"]
+[ext_resource type="PackedScene" uid="uid://dbggo24q7ilil" path="res://blocks/block1/block1.tscn" id="2_aatsp"]
+[ext_resource type="PackedScene" uid="uid://wtc5qepi342j" path="res://blocks/block3/block3.tscn" id="3_aatsp"]
+[ext_resource type="PackedScene" uid="uid://ducdgaf2bpbcf" path="res://blocks/block2/block2.tscn" id="3_sfwlx"]
+[ext_resource type="Texture2D" uid="uid://dna7s0pbj8at7" path="res://images/backgrounds/arbol_1.png" id="3_tysf0"]
+[ext_resource type="PackedScene" uid="uid://dskv0lvc3utx1" path="res://projectiles/projectile1/projectile1.tscn" id="7_3jy00"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(217, 487)
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("object_to_follow")]
+limit_left = -10000
+limit_top = -400
+limit_right = 1152
+limit_bottom = 690
+script = ExtResource("1_sfwlx")
+object_to_follow = NodePath("../CharacterBody2D")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_aatsp")]
+position = Vector2(-46, 82)
+
+[node name="StaticBody2D2" parent="StaticBody2D" instance=ExtResource("2_aatsp")]
+position = Vector2(-100, 0)
+
+[node name="StaticBody2D5" parent="StaticBody2D" instance=ExtResource("2_aatsp")]
+position = Vector2(200, 0)
+
+[node name="StaticBody2D6" parent="StaticBody2D" instance=ExtResource("2_aatsp")]
+position = Vector2(100, 0)
+
+[node name="StaticBody2D7" parent="StaticBody2D" instance=ExtResource("2_aatsp")]
+position = Vector2(400, 0)
+
+[node name="StaticBody2D8" parent="StaticBody2D" instance=ExtResource("2_aatsp")]
+position = Vector2(300, 0)
+
+[node name="StaticBody2D9" parent="StaticBody2D" instance=ExtResource("2_aatsp")]
+position = Vector2(600, 0)
+
+[node name="StaticBody2D10" parent="StaticBody2D" instance=ExtResource("2_aatsp")]
+position = Vector2(500, 0)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_sfwlx")]
+position = Vector2(54, -188)
+
+[node name="StaticBody2D4" parent="StaticBody2D3" instance=ExtResource("3_sfwlx")]
+position = Vector2(-100, 0)
+
+[node name="StaticBody2D14" parent="StaticBody2D3" instance=ExtResource("3_sfwlx")]
+position = Vector2(-200, 0)
+
+[node name="StaticBody2D12" parent="StaticBody2D3" instance=ExtResource("3_sfwlx")]
+position = Vector2(100, 0)
+
+[node name="StaticBody2D13" parent="StaticBody2D3" instance=ExtResource("3_sfwlx")]
+position = Vector2(449, 170)
+
+[node name="StaticBody2D11" parent="StaticBody2D3" instance=ExtResource("3_sfwlx")]
+position = Vector2(200, 0)
+
+[node name="StaticBody2D15" parent="." instance=ExtResource("3_aatsp")]
+position = Vector2(448, -434)
+rotation = -0.0349066
+
+[node name="StaticBody2D16" parent="StaticBody2D15" instance=ExtResource("3_aatsp")]
+position = Vector2(599.752, -11.0757)
+
+[node name="StaticBody2D2" parent="StaticBody2D15" instance=ExtResource("3_aatsp")]
+position = Vector2(-1104.25, -298.72)
+rotation = 0.10472
+
+[node name="StaticBody2D4" parent="StaticBody2D15" instance=ExtResource("3_aatsp")]
+position = Vector2(-506.731, -245.834)
+rotation = 0.10472
+
+[node name="Arbol1" type="Sprite2D" parent="."]
+position = Vector2(150, -68)
+texture = ExtResource("3_tysf0")
+
+[node name="Arbol2" type="Sprite2D" parent="."]
+position = Vector2(-406, -68)
+texture = ExtResource("3_tysf0")
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_aatsp")]
+position = Vector2(-246, 82)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_aatsp")]
+position = Vector2(-346, 82)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_aatsp")]
+position = Vector2(-446, 82)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_aatsp")]
+position = Vector2(654, 82)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_ps0pm")]
+position = Vector2(-179, -51)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("7_3jy00")]
+position = Vector2(431, -579)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("7_3jy00")]
+position = Vector2(-616, -825)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("7_3jy00")]
+position = Vector2(-202, -353)
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("7_3jy00")]
+position = Vector2(1105, -780)
