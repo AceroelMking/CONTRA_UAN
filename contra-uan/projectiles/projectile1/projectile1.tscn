@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dskv0lvc3utx1"]
+[gd_scene load_steps=4 format=3 uid="uid://dskv0lvc3utx1"]
 
+[ext_resource type="Script" uid="uid://bgq6axemhwkrs" path="res://projectiles/projectile1/projectile_1.gd" id="1_gepky"]
 [ext_resource type="Texture2D" uid="uid://dfg7ypmvosqee" path="res://images/objects/barril.png" id="1_llttm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gepky"]
-radius = 37.054
+radius = 39.1152
 
 [node name="RigidBody2D" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 7
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_gepky")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_llttm")
@@ -13,3 +19,5 @@ texture = ExtResource("1_llttm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_gepky")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

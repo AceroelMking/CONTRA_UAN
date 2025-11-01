@@ -1,3 +1,4 @@
+class_name Personaje
 extends CharacterBody2D
 @export var move_speed: float
 @export var jump_speed: float
@@ -43,3 +44,9 @@ func flip():
 func move_x():
 	var inpit_axis = Input.get_axis("move_left","move_right")
 	velocity.x = inpit_axis * move_speed
+
+func _on_area_2d_body_entered(body):
+	print("Un cuerpo ha entado en el area: ", body.name)
+	
+func damage_received():
+	print("Daño resibido")

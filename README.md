@@ -70,15 +70,28 @@ Permite colicionar con los mismos
 # POSDATA: Todo lo que se vio a continuación está sujeto a cambios con la evolución del videojuego.
 # BOCETO
 A continuación se observan pruebas y reconocimiento de la interfaz de godot, así como un primer juego de prueba.
-![avance](docs/images/b1.png)
-![avance](docs/images/b2.png)
-![avance](docs/images/b3.png)
+![avance]/(docs/images/b1.png)
+![avance](/docs/images/b2.png)
+![avance](/docs/images/b3.png)
 
 # AVANCES
 El personaje principal se mueve derecha, izquierda y salta (ya posee la mecanica de doble salto); tiene animaciones respectivas
 Coliciona con los objetos pero aun no resive daño de los proyectiles
-![avance](docs/images/a1.png)
-![avance](docs/images/a2.png)
-![avance](docs/images/a3.png)
-![avance](docs/images/ag.webm)
+![avance](/docs/images/a1.png)
+![avance](/docs/images/a2.png)
+![avance](/docs/images/a3.png)
+![Video](/docs/images/ag.webm)
+
+# Archivos del juego
+
+![Archivos](/contra-uan/)
+
+# VIDEO
+El personoje ahora detecta coliciones los barriles se eliminan despues de chocar al jugador, se creo el Boss que arroja barriles, los barriles no se acomulan se eliminan despues de estar 1 segundo quietos o en velocidad 0, el boss arroja los barriles de manera aleatortia, con un 50% de probabilidad de que salga un barril, esta probabilidad se modificara.
+![Video](/docs/images/ag2.webm)
+
+# APK
+En el momento no se podria jugar  en dispositivo movil ya que se debe crear los botones en godot para android
+En la ultima entrega se configurara la vida del personaje (que pueda morir), los botones para android y la escena para el proyectil del jugador para destruir a los enemigos o barriles, aun falta integrar sprites de disparo hacia arriba.
+![APK](/contra-uan/apkAndroid/apkAndroid.apk)
 

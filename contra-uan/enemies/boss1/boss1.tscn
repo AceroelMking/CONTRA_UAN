@@ -1,0 +1,102 @@
+[gd_scene load_steps=11 format=3 uid="uid://dxk3tk5i4srve"]
+
+[ext_resource type="Script" uid="uid://csl10c0hmpnrf" path="res://enemies/boss1/boss_1.gd" id="1_0o6h4"]
+[ext_resource type="Texture2D" uid="uid://cgy6f1kc8yupv" path="res://images/objects/SPRITES_FINALBOSS.png" id="1_q6wg2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egy03"]
+atlas = ExtResource("1_q6wg2")
+region = Rect2(0, 0, 950, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o6h4"]
+atlas = ExtResource("1_q6wg2")
+region = Rect2(950, 0, 950, 950)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6j34"]
+atlas = ExtResource("1_q6wg2")
+region = Rect2(0, 950, 950, 950)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6j34"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egy03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o6h4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6j34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6j34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6j34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6j34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o6h4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egy03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egy03")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_egy03"]
+radius = 179.0
+height = 462.0
+
+[sub_resource type="Animation" id="Animation_0o6h4"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_egy03"]
+resource_name = "barriles"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"launch_barrel"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o6j34"]
+_data = {
+&"RESET": SubResource("Animation_0o6h4"),
+&"barriles": SubResource("Animation_egy03")
+}
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_0o6h4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.717105, 0.696617)
+sprite_frames = SubResource("SpriteFrames_o6j34")
+autoplay = "default"
+frame_progress = 0.538991
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-23, -14)
+shape = SubResource("CapsuleShape2D_egy03")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o6j34")
+}
+autoplay = "barriles"
