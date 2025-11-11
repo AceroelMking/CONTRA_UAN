@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://du3gmk725jip1"]
+
+[ext_resource type="Texture2D" uid="uid://hl7te1yuxbnq" path="res://images/objects/bala.png" id="1_2f3tt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r4aui"]
+radius = 3.0
+
+[node name="Projectile2" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2f3tt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_r4aui")
