@@ -1,158 +1,241 @@
-[gd_scene load_steps=11 format=3 uid="uid://bga1vh0u530s0"]
+[gd_scene load_steps=12 format=3 uid="uid://dg2fgfi5mnkyk"]
 
-[ext_resource type="PackedScene" uid="uid://rotif5veplws" path="res://characters/character1/character1.tscn" id="1_ps0pm"]
-[ext_resource type="Script" uid="uid://nm43qqcvu0bj" path="res://levels/level1/camera_2d.gd" id="1_sfwlx"]
-[ext_resource type="PackedScene" uid="uid://dbggo24q7ilil" path="res://blocks/block1/block1.tscn" id="2_aatsp"]
-[ext_resource type="PackedScene" uid="uid://wtc5qepi342j" path="res://blocks/block3/block3.tscn" id="3_aatsp"]
-[ext_resource type="PackedScene" uid="uid://ducdgaf2bpbcf" path="res://blocks/block2/block2.tscn" id="3_sfwlx"]
-[ext_resource type="Texture2D" uid="uid://dna7s0pbj8at7" path="res://images/backgrounds/arbol_1.png" id="3_tysf0"]
-[ext_resource type="PackedScene" uid="uid://dskv0lvc3utx1" path="res://projectiles/projectile1/projectile1.tscn" id="7_3jy00"]
-[ext_resource type="PackedScene" uid="uid://dxk3tk5i4srve" path="res://enemies/boss1/boss1.tscn" id="8_8yb7b"]
-[ext_resource type="Texture2D" uid="uid://bvdw4mnwwb71s" path="res://images/objects/bandera.png" id="9_gw1fo"]
+[ext_resource type="Script" uid="uid://nm43qqcvu0bj" path="res://levels/level1/camera_2d.gd" id="1_gw1fo"]
+[ext_resource type="PackedScene" uid="uid://wtc5qepi342j" path="res://blocks/block3/block3.tscn" id="2_jhqhn"]
+[ext_resource type="PackedScene" uid="uid://cdkbg4psnh6r5" path="res://blocks/block4/block4.tscn" id="3_ddtso"]
+[ext_resource type="PackedScene" uid="uid://dxk3tk5i4srve" path="res://enemies/boss1/boss1.tscn" id="4_f7y8c"]
+[ext_resource type="PackedScene" uid="uid://dskv0lvc3utx1" path="res://projectiles/projectile1/projectile1.tscn" id="5_xc23s"]
+[ext_resource type="Texture2D" uid="uid://cjnk8gnb8fylw" path="res://images/objects/New Piskel.png" id="6_n5g8f"]
+[ext_resource type="PackedScene" uid="uid://rotif5veplws" path="res://characters/character1/character1.tscn" id="7_qugyr"]
+[ext_resource type="PackedScene" uid="uid://bncjskcj0k5nc" path="res://ui/ui/ui.tscn" id="8_bntk2"]
+[ext_resource type="Script" uid="uid://q78qpjlexsb2" path="res://levels/level1/gameController.gd" id="9_v1ci3"]
+[ext_resource type="PackedScene" uid="uid://dtrf50cy85nfv" path="res://ui/controls/controls.tscn" id="10_jhqhn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gw1fo"]
-size = Vector2(99, 55)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xrwa"]
+size = Vector2(82, 211)
 
-[node name="Node2D" type="Node2D"]
-position = Vector2(217, 487)
+[node name="Level11" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("object_to_follow")]
-limit_left = -10000
-limit_top = -400
-limit_right = 1152
-limit_bottom = 690
-script = ExtResource("1_sfwlx")
-object_to_follow = NodePath("../CharacterBody2D")
+script = ExtResource("1_gw1fo")
+object_to_follow = NodePath("../CharacterBody2D2")
 
-[node name="Bandera" type="Sprite2D" parent="."]
-position = Vector2(14, -739)
-texture = ExtResource("9_gw1fo")
+[node name="StaticBody2D" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(378, 566)
 
-[node name="Area2D" type="Area2D" parent="Bandera"]
-collision_layer = 0
-collision_mask = 2
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(977, 529)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bandera/Area2D"]
-position = Vector2(-0.5, -26)
-shape = SubResource("RectangleShape2D_gw1fo")
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(1575, 492)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("2_aatsp")]
-position = Vector2(-46, 82)
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(918, -510)
 
-[node name="StaticBody2D2" parent="StaticBody2D" instance=ExtResource("2_aatsp")]
-position = Vector2(-100, 0)
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(948, -33)
 
-[node name="StaticBody2D5" parent="StaticBody2D" instance=ExtResource("2_aatsp")]
-position = Vector2(200, 0)
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(1547, -70)
 
-[node name="StaticBody2D6" parent="StaticBody2D" instance=ExtResource("2_aatsp")]
-position = Vector2(100, 0)
+[node name="Block4" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(695, 247)
 
-[node name="StaticBody2D7" parent="StaticBody2D" instance=ExtResource("2_aatsp")]
-position = Vector2(400, 0)
+[node name="Block5" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(1294, 284)
 
-[node name="StaticBody2D8" parent="StaticBody2D" instance=ExtResource("2_aatsp")]
-position = Vector2(300, 0)
+[node name="Block6" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(1249, -276)
 
-[node name="StaticBody2D9" parent="StaticBody2D" instance=ExtResource("2_aatsp")]
-position = Vector2(600, 0)
+[node name="StaticBody2D7" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(349, 4)
 
-[node name="StaticBody2D10" parent="StaticBody2D" instance=ExtResource("2_aatsp")]
-position = Vector2(500, 0)
+[node name="Block7" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(96, 210)
 
-[node name="StaticBody2D3" parent="." instance=ExtResource("3_sfwlx")]
-position = Vector2(54, -188)
+[node name="Block8" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(650, -313)
 
-[node name="StaticBody2D4" parent="StaticBody2D3" instance=ExtResource("3_sfwlx")]
-position = Vector2(-100, 0)
+[node name="StaticBody2D8" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(1517, -547)
 
-[node name="StaticBody2D14" parent="StaticBody2D3" instance=ExtResource("3_sfwlx")]
-position = Vector2(-200, 0)
+[node name="StaticBody2D9" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(2116, -584)
 
-[node name="StaticBody2D12" parent="StaticBody2D3" instance=ExtResource("3_sfwlx")]
-position = Vector2(100, 0)
+[node name="Block9" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(2367, -820)
 
-[node name="StaticBody2D13" parent="StaticBody2D3" instance=ExtResource("3_sfwlx")]
-position = Vector2(449, 170)
+[node name="StaticBody2D10" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(2715, -621)
 
-[node name="StaticBody2D11" parent="StaticBody2D3" instance=ExtResource("3_sfwlx")]
-position = Vector2(200, 0)
+[node name="Block10" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(612, -930)
 
-[node name="StaticBody2D15" parent="." instance=ExtResource("3_aatsp")]
-position = Vector2(448, -434)
-rotation = -0.0349066
+[node name="StaticBody2D11" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(1768, -818)
 
-[node name="StaticBody2D16" parent="StaticBody2D15" instance=ExtResource("3_aatsp")]
-position = Vector2(599.752, -11.0757)
+[node name="Block11" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(-586, -1004)
 
-[node name="StaticBody2D2" parent="StaticBody2D15" instance=ExtResource("3_aatsp")]
-position = Vector2(-1104.25, -298.72)
-rotation = 0.10472
+[node name="StaticBody2D13" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(-261, -1195)
 
-[node name="StaticBody2D4" parent="StaticBody2D15" instance=ExtResource("3_aatsp")]
-position = Vector2(-506.731, -245.834)
-rotation = 0.10472
+[node name="StaticBody2D14" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(338, -1232)
 
-[node name="Arbol1" type="Sprite2D" parent="."]
-position = Vector2(150, -68)
-texture = ExtResource("3_tysf0")
+[node name="StaticBody2D15" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(937, -1269)
 
-[node name="Arbol2" type="Sprite2D" parent="."]
-position = Vector2(-406, -68)
-texture = ExtResource("3_tysf0")
+[node name="StaticBody2D16" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(1536, -1306)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("2_aatsp")]
-position = Vector2(-246, 82)
+[node name="StaticBody2D17" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(2135, -1343)
 
-[node name="StaticBody2D4" parent="." instance=ExtResource("2_aatsp")]
-position = Vector2(-346, 82)
+[node name="StaticBody2D18" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(2855, -1508)
 
-[node name="StaticBody2D5" parent="." instance=ExtResource("2_aatsp")]
-position = Vector2(-446, 82)
+[node name="StaticBody2D19" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(2077, -1622)
 
-[node name="StaticBody2D6" parent="." instance=ExtResource("2_aatsp")]
-position = Vector2(654, 82)
+[node name="StaticBody2D20" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(1478, -1585)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_ps0pm")]
-position = Vector2(-320, -59)
-collision_layer = 2
-collision_mask = 5
+[node name="Block12" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(335, -1815)
 
-[node name="RigidBody2D" parent="." instance=ExtResource("7_3jy00")]
-position = Vector2(-20, -534)
+[node name="Block13" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(-264, -1852)
 
-[node name="Node2D" parent="." instance=ExtResource("8_8yb7b")]
-position = Vector2(581, -772)
+[node name="Block14" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(-26, -2455)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="StaticBody2D21" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(1063, -2373)
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 51.0
-offset_bottom = 42.0
-theme_override_font_sizes/font_size = 30
-text = "100"
-horizontal_alignment = 1
+[node name="StaticBody2D22" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(153, -2203)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 22.0
-offset_top = -417.0
-offset_right = 30.0
-offset_bottom = -417.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Block15" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(791, -2204)
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
-layout_mode = 2
+[node name="Block16" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(1390, -2167)
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
-layout_mode = 2
+[node name="StaticBody2D23" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(-446, -2166)
 
-[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
-layout_mode = 2
+[node name="CharacterBody2D3" parent="." instance=ExtResource("4_f7y8c")]
+position = Vector2(1007, -2864)
 
-[connection signal="body_entered" from="Bandera/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[node name="RigidBody2D" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(412, -455)
+
+[node name="Block17" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(-863, -1889)
+
+[node name="NewPiskel" type="Sprite2D" parent="."]
+position = Vector2(1236, -2477)
+texture = ExtResource("6_n5g8f")
+
+[node name="Area2D" type="Area2D" parent="NewPiskel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NewPiskel/Area2D"]
+position = Vector2(24, -91.5)
+shape = SubResource("RectangleShape2D_7xrwa")
+
+[node name="Block18" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(13, -967)
+
+[node name="StaticBody2D12" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(1169, -781)
+
+[node name="StaticBody2D24" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(654, -1605)
+
+[node name="StaticBody2D25" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(-1299, -2039)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(-253, -1423)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(1840, -949)
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(-75, 92)
+
+[node name="RigidBody2D5" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(2196, -1801)
+
+[node name="RigidBody2D6" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(2855, -738)
+
+[node name="RigidBody2D7" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(1718, -200)
+
+[node name="RigidBody2D8" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(1725, 365)
+
+[node name="RigidBody2D9" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(-697, -2008)
+
+[node name="RigidBody2D10" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(1002, -1396)
+
+[node name="RigidBody2D11" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(-783, -1108)
+
+[node name="RigidBody2D12" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(1150, -2263)
+
+[node name="RigidBody2D13" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(-187, -2306)
+
+[node name="gameController" type="Node2D" parent="."]
+script = ExtResource("9_v1ci3")
+
+[node name="Timer" type="Timer" parent="gameController"]
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(120, 450)
+
+[node name="RigidBody2D14" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(773, 126)
+
+[node name="RigidBody2D15" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(757, -137)
+
+[node name="RigidBody2D16" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(1760, -658)
+
+[node name="RigidBody2D17" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(2244, -958)
+
+[node name="RigidBody2D18" parent="." instance=ExtResource("5_xc23s")]
+position = Vector2(55, -1084)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_f7y8c")]
+position = Vector2(10, -2864)
+
+[node name="Block19" parent="." instance=ExtResource("3_ddtso")]
+position = Vector2(50, -350)
+
+[node name="StaticBody2D26" parent="." instance=ExtResource("2_jhqhn")]
+position = Vector2(2174, 455)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("7_qugyr")]
+position = Vector2(120, 450)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("8_bntk2")]
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("10_jhqhn")]
+
+[connection signal="body_entered" from="NewPiskel/Area2D" to="gameController" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="NewPiskel/Area2D" to="CharacterBody2D2" method="_on_area_2d_body_entered"]
+[connection signal="player_health_updated" from="gameController" to="CanvasLayer" method="_on_game_controller_player_health_updated"]
+[connection signal="time_updated" from="gameController" to="CanvasLayer" method="_on_game_controller_time_updated"]
+[connection signal="timeout" from="gameController/Timer" to="gameController" method="_on_timer_timeout"]
+[connection signal="player_fall" from="CharacterBody2D2" to="gameController" method="_on_character_body_2d_2_player_fall"]
+[connection signal="player_hit" from="CharacterBody2D2" to="gameController" method="_on_character_body_2d_2_player_hit"]

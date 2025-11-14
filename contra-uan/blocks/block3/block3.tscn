@@ -8,10 +8,11 @@ size = Vector2(600.101, 25)
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -0.0436332
 texture = ExtResource("1_8tmwl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7.5)
-rotation = -0.0174533
+rotation = -0.0610865
 shape = SubResource("RectangleShape2D_7e65w")
 one_way_collision = true

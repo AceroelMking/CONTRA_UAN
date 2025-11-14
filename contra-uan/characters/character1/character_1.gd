@@ -1,29 +1,53 @@
 class_name Personaje
 extends CharacterBody2D
+signal player_hit()
+signal player_fall()
+
+@export var too_down : float
+
 @export var move_speed: float
 @export var jump_speed: float
 @onready var animated_sprite = $AnimatedSprite2D
 var is_facing_right = true
+
 var double_jump_counter: int
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+const bala = preload("res://projectiles/projectile2/projectile2.tscn")
+
 func _physics_process(delta):
 	jump(delta)
 	move_x()
 	flip()
 	update_animations()
 	move_and_slide()
-	
+	shooot()  
+	damage_fall() 
+
 func update_animations():
 	if not is_on_floor():
 		if velocity.y < 0:
-			animated_sprite.play("jump")
+			if Input.is_action_pressed("aim_up"):
+				animated_sprite.play("shoot_up_jumping")
+			else:
+				animated_sprite.play("jump")
 		else:
-			animated_sprite.play("fall")
+			if Input.is_action_pressed("aim_up"):
+				animated_sprite.play("shoot_up_falling")
+			else:
+				animated_sprite.play("fall")
 		return
 	if velocity.x:
-		animated_sprite.play("run")
+		if Input.is_action_pressed("aim_up"):
+			animated_sprite.play("shoot_up_walking")
+		else:
+			animated_sprite.play("run")
 	else:
-		animated_sprite.play("idle")
+		if Input.is_action_pressed("aim_up"):
+			animated_sprite.play("shoot_up")
+		else:
+			animated_sprite.play("idle")
 
 func jump(delta):
 	if  Input.is_action_just_pressed("jump") and double_jump_counter < 1:
@@ -44,9 +68,28 @@ func flip():
 func move_x():
 	var inpit_axis = Input.get_axis("move_left","move_right")
 	velocity.x = inpit_axis * move_speed
+	
+func shooot():
+	var shoot = bala.instantiate()      
+	if Input.is_action_just_pressed("shoot"):
+		get_parent().add_child(shoot) 
+		if Input.is_action_pressed("aim_up"):
+			shoot.up = true
+			shoot.position = $Marker2D2.global_position
+		else:
+			if not is_facing_right:
+				shoot.scale.x *= -1
+				shoot.velocidad_bala *= -1
+			shoot.position =  $Marker2D.global_position
 
-func _on_area_2d_body_entered(body):
+func _on_area_2d_body_entered(body):    
 	print("Un cuerpo ha entado en el area: ", body.name)
 	
 func damage_received():
 	print("Daño resibido")
+	player_hit.emit()
+	
+func damage_fall():
+	if position.y > too_down:
+		damage_received()
+		player_fall.emit()

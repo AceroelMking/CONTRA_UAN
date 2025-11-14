@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtrf50cy85nfv"]
+
+[ext_resource type="Texture2D" uid="uid://3kv1p04c4vmu" path="res://images/backgrounds/btn_space.png" id="1_wnppa"]
+[ext_resource type="Texture2D" uid="uid://cyqsr4dc1q2s1" path="res://images/backgrounds/btn_up.png" id="2_d3c44"]
+[ext_resource type="Texture2D" uid="uid://d1xtm28r8v5ds" path="res://images/backgrounds/btn_w.png" id="3_sfvo4"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="TouchScreenButton5" type="TouchScreenButton" parent="."]
+position = Vector2(928, 397)
+scale = Vector2(1.74, 1.74)
+texture_normal = ExtResource("1_wnppa")
+action = "shoot"
+
+[node name="TouchScreenButton6" type="TouchScreenButton" parent="."]
+position = Vector2(931, 29)
+scale = Vector2(1.96, 1.96)
+texture_normal = ExtResource("2_d3c44")
+action = "aim_up"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(48.0001, 37)
+scale = Vector2(2.05, 2.05)
+texture_normal = ExtResource("3_sfvo4")
+action = "jump"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(294, 429)
+rotation = 1.5708
+scale = Vector2(1.36, 1.36)
+texture_normal = ExtResource("3_sfvo4")
+action = "move_right"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
+position = Vector2(15, 565)
+rotation = -1.5708
+scale = Vector2(1.36, 1.36)
+texture_normal = ExtResource("3_sfvo4")
+action = "move_left"

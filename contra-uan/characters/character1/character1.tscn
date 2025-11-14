@@ -1,13 +1,20 @@
-[gd_scene load_steps=21 format=3 uid="uid://rotif5veplws"]
+[gd_scene load_steps=28 format=3 uid="uid://rotif5veplws"]
 
 [ext_resource type="Texture2D" uid="uid://4o48cg37k56w" path="res://images/objects/personaje_1_1.png" id="1_6leg4"]
 [ext_resource type="Script" uid="uid://cugw62hsjhbq4" path="res://characters/character1/character_1.gd" id="1_kb6td"]
+[ext_resource type="Texture2D" uid="uid://dsrtld0xgdpac" path="res://images/objects/agachado.png" id="2_00bfy"]
 [ext_resource type="Texture2D" uid="uid://bt6s5mt5atd0c" path="res://images/objects/personaje_1_2.png" id="5_adv24"]
 [ext_resource type="Texture2D" uid="uid://di3m7p5a5q65j" path="res://images/objects/personaje_1_3.png" id="6_wcn7c"]
 [ext_resource type="Texture2D" uid="uid://cpygw3inja1lj" path="res://images/objects/personaje_1_4.png" id="7_ysxqr"]
 [ext_resource type="Texture2D" uid="uid://dp6xw2a1up8qs" path="res://images/objects/personaje_1_5.png" id="8_wpii6"]
 [ext_resource type="Texture2D" uid="uid://cn7qmpyie16yt" path="res://images/objects/personaje_1_6.png" id="9_00bfy"]
 [ext_resource type="Texture2D" uid="uid://bggdud0rplfrl" path="res://images/objects/personaje_1_7.png" id="10_3fdub"]
+[ext_resource type="Texture2D" uid="uid://mlpatyes5ina" path="res://images/objects/disparo_arriva.png" id="10_sv40q"]
+[ext_resource type="Texture2D" uid="uid://3pyjqx4pvkoy" path="res://images/objects/disparo_arriva_2.png" id="12_0repj"]
+[ext_resource type="Texture2D" uid="uid://p4vds6ksug85" path="res://images/objects/disparo_arriva_3.png" id="13_0g4es"]
+[ext_resource type="Texture2D" uid="uid://chr75wjpmx1ns" path="res://images/objects/disparo_arriva_4.png" id="14_y1x6w"]
+[ext_resource type="Texture2D" uid="uid://c6n4ibluct7f7" path="res://images/objects/disparo_arriva_5.png" id="15_dq7tr"]
+[ext_resource type="Texture2D" uid="uid://dtlm6emgac774" path="res://images/objects/disparo_arriva_6.png" id="16_1jyrg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tgknn"]
 atlas = ExtResource("8_wpii6")
@@ -51,6 +58,14 @@ region = Rect2(0, 0, 148, 173)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1eex1"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_00bfy")
+}],
+"loop": true,
+"name": &"body_to_ground",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tgknn")
@@ -100,21 +115,79 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_sv40q")
+}],
+"loop": true,
+"name": &"shoot_up",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_y1x6w")
+}],
+"loop": true,
+"name": &"shoot_up_falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_0g4es")
+}],
+"loop": true,
+"name": &"shoot_up_jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_0repj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0g4es")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_y1x6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dq7tr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1jyrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1jyrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sv40q")
+}],
+"loop": true,
+"name": &"shoot_up_walking",
+"speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf7mk"]
-size = Vector2(30, 153)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wpii6"]
+radius = 32.0
+height = 155.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_kb6td")
-move_speed = 160.0
-jump_speed = 500.0
-metadata/_edit_group_ = true
+too_down = 1200.0
+move_speed = 280.0
+jump_speed = 445.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1eex1")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-9, 5.5)
-shape = SubResource("RectangleShape2D_qf7mk")
+position = Vector2(-3, 5.5)
+shape = SubResource("CapsuleShape2D_wpii6")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(60, 18)
+gizmo_extents = 0.0
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(-2, -77)

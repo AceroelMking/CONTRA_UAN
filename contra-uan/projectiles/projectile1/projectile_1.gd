@@ -1,7 +1,9 @@
 class_name Barril
 extends RigidBody2D
 
-@export var too_down = 1000
+@export var healt = 4
+
+@export var too_down = 3000
 var damage_done = false
 
 @export var tiempo_para_desaparecer: float = 1.0
@@ -9,6 +11,9 @@ var damage_done = false
 var tiempo_quieto: float = 0.0
 
 func _process(delta):
+	destroy_barrel(delta)
+
+func destroy_barrel(delta):
 	if position.y > too_down:
 		queue_free() 
 	if linear_velocity.length() < tolerancia_velocidad and abs(angular_velocity) < 0.1:
@@ -26,3 +31,9 @@ func _on_body_entered(body):
 			queue_free() 
 			if body.has_method("damage_received"):
 				body.damage_received()
+				
+func damage_received():
+	healt -= 1
+	if healt == 0:
+		queue_free()
+	
