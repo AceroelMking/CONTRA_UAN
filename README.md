@@ -90,8 +90,7 @@ Coliciona con los objetos pero aun no resive daño de los proyectiles
 El personoje ahora detecta coliciones los barriles se eliminan despues de chocar al jugador, se creo el Boss que arroja barriles, los barriles no se acomulan se eliminan despues de estar 1 segundo quietos o en velocidad 0, el boss arroja los barriles de manera aleatortia, con un 50% de probabilidad de que salga un barril, esta probabilidad se modificara.
 ![Video](/docs/images/ag2.webm)
 
-# APK
-¡Ya es posible jugar el juego en android!
-Se configuro la vida del personaje (que pueda morir), los botones para android y la escena para el proyectil del jugador para destruir a los enemigos o barriles, mediante la matriz de coliciones como lo maneja gogor logramos hacer que las balas colicionen con los barriles, las balas detectan que un barrila entrado en area 2D y le "indica" al barril que  debe ejecutar una funcion que le va qitando la vida al barril esto se hace a travez de los llamados en godot.
+# APK ¡Ya es posible jugar el juego en android!
+Se configuro la vida del personaje (que pueda morir), los botones para android y la escena para el proyectil del jugador para destruir a los enemigos o barriles, mediante la matriz de coliciones como lo maneja godot logramos hacer que las balas colicionen con los barriles, las balas detectan que un barril a entrado en el area 2D y le "indica" al barril que  debe ejecutar una funcion que le va qitando la vida al barril esto se hace a travez de los llamados en godot.
 ![PUEDES DESCARGAR EL APK AQUÍ](/contra-uan/apkAndroid/apkAndroid.apk)
 
