@@ -91,7 +91,7 @@ El personoje ahora detecta coliciones los barriles se eliminan despues de chocar
 ![Video](/docs/images/ag2.webm)
 
 # APK
-En el momento no se podria jugar  en dispositivo movil ya que se debe crear los botones en godot para android
-En la ultima entrega se configurara la vida del personaje (que pueda morir), los botones para android y la escena para el proyectil del jugador para destruir a los enemigos o barriles, aun falta integrar sprites de disparo hacia arriba.
-![APK](/contra-uan/apkAndroid/apkAndroid.apk)
+¡Ya es posible jugar el juego en android!
+Se configuro la vida del personaje (que pueda morir), los botones para android y la escena para el proyectil del jugador para destruir a los enemigos o barriles, mediante la matriz de coliciones como lo maneja gogor logramos hacer que las balas colicionen con los barriles, las balas detectan que un barrila entrado en area 2D y le "indica" al barril que  debe ejecutar una funcion que le va qitando la vida al barril esto se hace a travez de los llamados en godot.
+![PUEDES DESCARGAR EL APK AQUÍ](/contra-uan/apkAndroid/apkAndroid.apk)
 
